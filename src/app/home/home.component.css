@@ -19,6 +19,7 @@ main {
 
 .contact p {
     padding-left: 3rem;
+    margin: auto;
 }
 .specials ul {
     list-style-type: none;

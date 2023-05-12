@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 
 const routes: Routes = [
+  { path: '', component: MenuComponent },
   { path: 'Home', component: MenuComponent },
   { path: 'About', component: AboutComponent },
 ];

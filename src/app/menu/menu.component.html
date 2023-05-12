@@ -1,0 +1,48 @@
+<body>
+  <header>
+    <h1>
+      Welcome to
+      <div class="logo">
+        <span class="logo-text">Chirpus</span>
+        <span class="logo-subtext">Pizza</span>
+      </div>
+    </h1>
+  </header>
+  <div class="menu">
+    <div class="menu-toggle">
+      <button (click)="showWholeMenu()">Show Whole Menu</button>
+      <button (click)="showCategoryMenu()">Show Category Menu</button>
+    </div>
+    <p></p>
+    <ng-container *ngIf="!showByCategory">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of menu">
+            <td>{{ item.name }}</td>
+            <td>{{ item.category }}</td>
+            <td>{{ item.price | currency }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </ng-container>
+
+    <!-- Category Menu -->
+    <ng-container *ngIf="showByCategory">
+      <ng-container *ngFor="let cat of categories">
+        <h2>{{ cat }}</h2>
+        <ul>
+          <li *ngFor="let item of getByCategory(cat)">
+            {{ item.name }} - {{ item.price | currency }}
+          </li>
+        </ul>
+      </ng-container>
+    </ng-container>
+  </div>
+</body>

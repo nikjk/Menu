@@ -39,6 +39,10 @@ button:hover {
     color: #ff6600;
 }
 
+footer {
+    bottom: 0;
+    position: relative;
+}
 /* Responsive styles */
 @media screen and (max-width: 767px) {
     .container {

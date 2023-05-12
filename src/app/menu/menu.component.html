@@ -10,8 +10,12 @@
   </header>
   <div class="menu">
     <div class="menu-toggle">
-      <button (click)="showWholeMenu()">Show Whole Menu</button>
-      <button (click)="showCategoryMenu()">Show Menu by Category</button>
+      <ng-container *ngIf="showByCategory">
+        <button (click)="showWholeMenu()">Show Whole Menu</button>
+      </ng-container>
+      <ng-container *ngIf="!showByCategory">
+        <button (click)="showCategoryMenu()">Show Menu by Category</button>
+      </ng-container>
     </div>
     <p></p>
     <ng-container *ngIf="!showByCategory">
